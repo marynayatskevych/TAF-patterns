@@ -24,23 +24,8 @@ public abstract class BasePage {
         find(locator).click();
     }
 
-    protected String getText(By locator) {
-        return find(locator).getText();
-    }
-
-    protected void type(By locator, String text) {
-        waitForVisible(locator);
-        WebElement element = find(locator);
-        element.clear();
-        element.sendKeys(text);
-    }
-
     protected void waitForVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    protected void waitForClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     protected void waitForVisible(By locator) {
@@ -54,11 +39,6 @@ public abstract class BasePage {
     protected void scrollTo(By locator) {
         waitForVisible(locator);
         WebElement element = find(locator);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
-    protected void scrollTo(WebElement element) {
-        waitForVisible(element);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
