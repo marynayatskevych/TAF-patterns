@@ -15,28 +15,40 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    protected WebElement find(By locator){
+    protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
-    protected void click(By locator){
+    protected void click(By locator) {
+        waitForClickable(locator);
         find(locator).click();
     }
 
-    protected String getText(By locator){
-        String str = find(locator).getText();
-        return str;
+    protected String getText(By locator) {
+        return find(locator).getText();
     }
 
     protected void type(By locator, String text) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        waitForVisible(locator);
         WebElement element = find(locator);
         element.clear();
         element.sendKeys(text);
     }
 
+    protected void waitForVisible(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    protected void waitForClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
     protected void waitForVisible(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    protected void waitForClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     protected void scrollTo(By locator) {
@@ -45,8 +57,8 @@ public abstract class BasePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public void waitForClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    protected void scrollTo(WebElement element) {
+        waitForVisible(element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
-
 }

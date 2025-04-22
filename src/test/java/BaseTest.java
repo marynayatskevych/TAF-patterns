@@ -7,6 +7,8 @@ import pages.CartModalPage;
 import pages.HomePage;
 import pages.ProductPage;
 
+import java.time.Duration;
+
 public class BaseTest {
 
     protected WebDriver driver;
@@ -19,6 +21,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://rozetka.com.ua/");
         homePage = new HomePage(driver);
         productPage = new ProductPage(driver);

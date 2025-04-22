@@ -13,8 +13,7 @@ public class ProductSearchTest extends BaseTest {
         softAssert.assertTrue(homePage.firstProductContains("asus"), "First item doesn't contain current word");
         homePage.clickFirstFilterProduct();
         String actualProductTitle = productPage.getProductTitle().toLowerCase();
-        softAssert.assertTrue(actualProductTitle.contains("asus"),
-                "Title of the card does not consist the expected name");
+        softAssert.assertTrue(actualProductTitle.contains("asus"), "Title of the card does not consist the expected name");
         softAssert.assertAll();
     }
 }
