@@ -1,39 +1,101 @@
-# WebDriver-TestNG
+# TAF
+test automation framework
+## Test Automation Framework (TAF) for UI Testing
 
-The test cases are located in the resources folder.
+This project is a Selenium-based Test Automation Framework implemented in Java, using TestNG and Page Object Model architecture. The framework is designed for testing a web application similar to Rozetka with support for filtering, searching, and working with product data. It provides flexible configuration, logging, reporting, and browser selection features.
 
-In this project was tested:
+---
 
-Automated 3 user scenarios on the website Rozetka (https://rozetka.com.ua/) using Selenium WebDriver and TestNG:
+### Project Requirements & Implementation
 
-- Search for a product by keyword and verify that the first result matches the search query.
+1. **WebDriverManager for managing drivers for different browsers**
 
-- Add a product to the cart and check that the modal window appears with the item added.
+    * Implemented via `io.github.bonigarcia.WebDriverManager` in `DriverFactory.java`
+    * Supports flexible browser selection via `config.properties` or `testng.xml` parameter
 
-- Filter products by the brand HOCO and verify that all displayed items belong to that brand.
-  
-Tools & Technologies Used
+2. **PageObject / PageFactory for abstract pages**
 
--  Selenium WebDriver API – browser navigation, actions, JavaScript execution, Actions, element interaction
+    * All pages inherit from `BasePage.java`
+    * Uses `PageFactory.initElements` for element initialization
 
--  Locator Strategies – By.name, By.cssSelector, By.xpath, @FindBy, dynamic locators (getBrandLink())
+3. **Business model (dedicated entities)**
 
--  Waits – explicit waits via WebDriverWait and ExpectedConditions, custom wait methods, timeout handling
+    * `Product.java` is introduced as a business object to encapsulate product name, price, etc.
+    * Used in filter validation and test assertions for more meaningful verification
 
--  Page Object Model + Page Factory – all pages follow POM and utilize @FindBy with PageFactory.initElements
+4. **XML suites for Smoke and Regression tests**
 
+    * `smoke.xml` and `regression.xml` are created in `src/test/resources/`
+    * Allow easy control over which tests to run
 
-| Acceptance Criteria                                                          | Met |
-|------------------------------------------------------------------------------|-----|
- Scenarios are linear (3 total)                                               | ✅   |
-| Different locator strategies are used                                        | ✅   |        
-| Auto-generated locators are avoided                                          |      ✅  |       
- WebDriver API is widely used                                                 | ✅   |
-| Both implicit and explicit waits are used                                    |  ✅   |
- Test scenarios are clear, stable, and well-structured                        |   ✅  |
-| Each test method includes assertions                                         |    ✅ |
-| Page Objects follow consistent structure and proper decomposition            |    ✅     |
-| At least one level of inheritance exists between pages (BasePage abstraction) |     ✅         |
+5. **Screenshot on test failure with log output**
 
+    * Implemented via `ScreenshotSaver.java`
+    * Automatically triggered from `TestListener.java`
+    * Captures screenshot and logs path when test fails
 
+6. **Flexible parameters (browser, suite, environment)**
 
+    * Browser can be set in `config.properties` or overridden via `testng.xml`
+    * Tests are grouped and managed via suite files
+    * Configurable base URL and other environment-specific settings
+
+7. **Logging with log4j**
+
+    * Uses `log4j2.xml` configuration
+    * Supports multiple levels: `debug`, `info`, `error`, `warn`
+    * Logs output to both console and rotating daily log files in `logs/`
+    * Markers such as `[TEST]` and `[ACTION]` are used for structured log messages
+
+8. **Allure Reporting Integration**
+
+    * Allure annotations added (e.g. `@Step`) in Page Object methods
+    * Tests generate results to `allure-results`
+    * Reports viewed via `allure serve` or `allure generate`
+
+9. **Highlighting Elements with WebDriverEventListener**
+
+    * `HighlightingListener.java` tracks last interacted element
+    * Red border is applied on interaction and during screenshot capture if test fails
+
+---
+
+###  Commands
+
+Run tests with Maven:
+
+```bash
+mvn clean test -DsuiteXmlFile=src/test/resources/smoke.xml
+```
+
+Generate Allure report:
+
+```bash
+allure serve allure-results
+```
+
+---
+
+###  Project Structure
+
+```
+TAF/
+├── src/
+│   ├── main/
+│   │   └── java/core/         # BasePage, DriverFactory
+│   │   └── java/pages/        # Page Objects (HomePage, ProductPage, CartModelPage)
+│   │   └── java/utils/        # HighlightingListener, ScreenshotSaver, TestListener
+        └── java/model/        # Product
+│   └── test/
+│       └── java/tests/        # Test classes
+│
+├── resources/
+│   └── config.properties      # Browser & environment config
+│   └── smoke.xml              # Smoke test suite
+│   └── regression.xml         # Regression test suite
+│   └── log4j2.xml             # Logging configuration
+│
+├── target/logs/              # Logs output
+├── target/screenshots/       # Screenshots on test failure
+├── allure-results/           # Allure result files
+```
