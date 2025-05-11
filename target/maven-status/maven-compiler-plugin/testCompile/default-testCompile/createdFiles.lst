@@ -1,0 +1,4 @@
+tests/ProductSearchTest.class
+tests/AddToCartTest.class
+tests/BaseTest.class
+tests/FilterByBrandTest.class
