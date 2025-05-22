@@ -4,14 +4,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
+import static utils.LoggerMarkers.*;
 
 public class HighlightingListener implements WebDriverListener {
 
     private static final Logger log = LoggerFactory.getLogger(HighlightingListener.class);
     private static final ThreadLocal<WebElement> lastInteractedElement = new ThreadLocal<>();
-    private static final Marker ERROR = MarkerFactory.getMarker("ERROR");
 
     @Override
     public void beforeFindElement(WebDriver driver, By locator) {

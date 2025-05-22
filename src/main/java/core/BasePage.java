@@ -6,9 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
-
+import static utils.LoggerMarkers.*;
 import java.time.Duration;
 import static core.DriverFactory.getDriver;
 
@@ -17,7 +15,6 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     private static final Logger log = LoggerFactory.getLogger(BasePage.class);
-    private static final Marker ACTION = MarkerFactory.getMarker("ACTION");
 
     public BasePage() {
         this.driver = getDriver();

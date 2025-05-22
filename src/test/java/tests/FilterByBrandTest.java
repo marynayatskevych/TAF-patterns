@@ -3,25 +3,20 @@ package tests;
 import model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import utils.TestListener;
-
 import java.util.List;
+import static utils.LoggerMarkers.*;
 
 @Listeners(TestListener.class)
+
 public class FilterByBrandTest extends BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(FilterByBrandTest.class);
     SoftAssert softAssert = new SoftAssert();
-    private static final Marker ACTION = MarkerFactory.getMarker("ACTION");
-    private static final Marker DEBUG = MarkerFactory.getMarker("DEBUG");
-    private static final Marker TEST = MarkerFactory.getMarker("TEST");
 
     @Test
     public void testFilterByBrandSamsung() {

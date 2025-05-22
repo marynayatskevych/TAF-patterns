@@ -6,17 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.HighlightingListener;
-import utils.ScreenshotSaver;
+import static utils.LoggerMarkers.*;
 
 public class TestListener implements ITestListener {
 
-    private static final Marker TEST = MarkerFactory.getMarker("TEST");
     private static final Logger logger = LoggerFactory.getLogger(TestListener.class);
 
     @Override

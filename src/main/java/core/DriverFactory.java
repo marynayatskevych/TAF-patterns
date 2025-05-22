@@ -10,16 +10,13 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.openqa.selenium.support.events.EventFiringDecorator;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
+import static utils.LoggerMarkers.*;
 import utils.HighlightingListener;
 
 public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     private static final Logger log = LoggerFactory.getLogger(DriverFactory.class);
-    private static final Marker DEBUG = MarkerFactory.getMarker("DEBUG");
-    private static final Marker ACTION = MarkerFactory.getMarker("ACTION");
 
     private DriverFactory() {
     }

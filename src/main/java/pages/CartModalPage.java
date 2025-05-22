@@ -7,14 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
-
 import java.util.List;
+import static utils.LoggerMarkers.TEST;
 
 public class CartModalPage extends BasePage {
     private static final Logger log = LoggerFactory.getLogger(CartModalPage.class);
-    private static final Marker TEST = MarkerFactory.getMarker("TEST");
 
     @FindBy(css = "rz-modal-layout.modal-layout")
     private WebElement cartModal;

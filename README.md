@@ -65,6 +65,10 @@ This project is a Selenium-based Test Automation Framework implemented in Java, 
 Run tests with Maven:
 
 ```bash
+# Run tests on Windows
+mvn clean test -DsuiteXmlFile="src\\test\\resources\\smoke.xml"
+
+# Run tests on Unix/Mac
 mvn clean test -DsuiteXmlFile=src/test/resources/smoke.xml
 ```
 

@@ -2,20 +2,21 @@ package tests;
 
 import core.DriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import static utils.LoggerMarkers.*;
 
 public abstract class BaseTest {
 
     protected WebDriver driver;
+    protected WebDriverWait wait;
+
     private static final Logger log = LoggerFactory.getLogger(BaseTest.class);
-    private static final Marker ACTION = MarkerFactory.getMarker("ACTION");
 
     @BeforeMethod
     @Parameters({"browser"})

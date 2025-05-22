@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import core.DriverFactory;
 import model.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -9,17 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
+import static utils.LoggerMarkers.*;
 import io.qameta.allure.Step;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage {
     private static final Logger log = LoggerFactory.getLogger(HomePage.class);
-    private static final Marker TEST = MarkerFactory.getMarker("TEST");
-    private static final Marker ERROR = MarkerFactory.getMarker("ERROR");
-    private static final Marker ACTION = MarkerFactory.getMarker("ACTION");
 
     @FindBy(name = "search")
     private WebElement searchField;
@@ -126,14 +123,21 @@ public class HomePage extends BasePage {
     @Step("Select brand filter: {brand}")
     public void selectBrand(String brandName) {
         log.info(ACTION, "Selecting brand filter: {}", brandName);
-        wait.until(ExpectedConditions.visibilityOf(brandSection));
-        org.openqa.selenium.By brandLink = getBrandLink(brandName);
-        scrollTo(brandLink);
-        waitForClickable(brandLink);
-        click(brandLink);
+
+        // XPath локатор по части текста
+        String xpath = String.format("//a[contains(@class,'checkbox-filter-link') and contains(.,'%s')]", brandName);
+        By brandLocator = By.xpath(xpath);
+
+        // Ждём появления, скроллим, кликаем
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(brandLocator));
+        scrollTo(element);
+        element.click();
+
+        // Ждём изменения URL и загрузки продуктов
         wait.until(ExpectedConditions.urlContains("producer=" + brandName.toLowerCase()));
         waitForProductsReload();
     }
+
 
     @Step("Wait for products to reload")
     private void waitForProductsReload() {
