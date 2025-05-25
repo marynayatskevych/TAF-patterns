@@ -17,7 +17,6 @@ public class AddToCartTest extends BaseTest {
     SoftAssert softAssert = new SoftAssert();
     private static final Logger log = LoggerFactory.getLogger(AddToCartTest.class);
 
-
     @Test
     public void testAddProductTo() throws InterruptedException {
         log.info(TEST, "Test: Add item to cart started");
@@ -61,7 +60,6 @@ public class AddToCartTest extends BaseTest {
 
         log.info(TEST, "Actual product title in cart: '{}'", actualProductTitle);
         log.info(TEST, "Expected to contain: '{}'", expected.getName());
-
 
         softAssert.assertTrue(
                 actual.getName().toLowerCase().contains(expected.getName().toLowerCase()),

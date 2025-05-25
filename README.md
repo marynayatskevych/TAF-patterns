@@ -1,66 +1,52 @@
-# TAF
-test automation framework
-## Test Automation Framework (TAF) for UI Testing
+### Design Patterns and S.O.L.I.D. principles
 
-This project is a Selenium-based Test Automation Framework implemented in Java, using TestNG and Page Object Model architecture. The framework is designed for testing a web application similar to Rozetka with support for filtering, searching, and working with product data. It provides flexible configuration, logging, reporting, and browser selection features.
+This project demonstrates the practical implementation of design patterns and code improvements based on SOLID principles
 
 ---
 
-### Project Requirements & Implementation
+####  Implemented Design Patterns
 
-1. **WebDriverManager for managing drivers for different browsers**
+1. **Singleton**
 
-    * Implemented via `io.github.bonigarcia.WebDriverManager` in `DriverFactory.java`
-    * Supports flexible browser selection via `config.properties` or `testng.xml` parameter
+**Used in:** `DriverFactory` class  
+**Purpose:** Implements Singleton pattern using ThreadLocal<WebDriver>
 
-2. **PageObject / PageFactory for abstract pages**
+2. **Factory Method**
 
-    * All pages inherit from `BasePage.java`
-    * Uses `PageFactory.initElements` for element initialization
+**Used in:** `PageFactoryManager` class  
+**Purpose:** Creates Page Objects dynamically. Eliminates the need to instantiate pages manually in each test, improves flexibility and reusability.
 
-3. **Business model (dedicated entities)**
+3. ** Decorator**
 
-    * `Product.java` is introduced as a business object to encapsulate product name, price, etc.
-    * Used in filter validation and test assertions for more meaningful verification
+**Used in:** `HighlightingListener` + `EventFiringDecorator`  
+**Purpose:** Enhances standard WebDriver behavior by visually highlighting interacted elements and logging actions. Integrated directly in the driver setup.
 
-4. **XML suites for Smoke and Regression tests**
+All of these classes are actively used and invoked during test execution.
 
-    * `smoke.xml` and `regression.xml` are created in `src/test/resources/`
-    * Allow easy control over which tests to run
 
-5. **Screenshot on test failure with log output**
+####  Applied SOLID Principles
 
-    * Implemented via `ScreenshotSaver.java`
-    * Automatically triggered from `TestListener.java`
-    * Captures screenshot and logs path when test fails
+The framework was reviewed and refactored according to key SOLID design principles:
 
-6. **Flexible parameters (browser, suite, environment)**
+| Class           | Problem                                                                 | Solution                                                                 |
+|-----------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| `DriverFactory` | The class has more than one responsibility: driver setup and unrelated logic. | Extracted utility logic into other classes. Only WebDriver-related methods remain. |
+| `HomePage`      | Class is open for modification (not extension), fields were public, some methods redundant. | Fields were set to private, unused logic removed, shared behavior moved to `BasePage`. |
+| `Product`       | Direct constructor requires multiple parameters; not extendable.         | Introduced `ProductBuilder` to construct Product instances with optional fields. |
+| `AddToCartTest` | Direct instantiation of Page Objects repeated in every test.             | Page creation centralized via `PageFactoryManager`, reducing duplication and increasing modularity. |
 
-    * Browser can be set in `config.properties` or overridden via `testng.xml`
-    * Tests are grouped and managed via suite files
-    * Configurable base URL and other environment-specific settings
 
-7. **Logging with log4j**
+####  Summary: SOLID Principles Implemented in the Framework
 
-    * Uses `log4j2.xml` configuration
-    * Supports multiple levels: `debug`, `info`, `error`, `warn`
-    * Logs output to both console and rotating daily log files in `logs/`
-    * Markers such as `[TEST]` and `[ACTION]` are used for structured log messages
+| Principle                        | Meaning                                                                                      | Implementation Example                                                                                   |
+|----------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Single Responsibility Principle** | Each class should have only one responsibility.                                              | `DriverFactory` is responsible only for driver creation; logging logic is in separate listener classes.   |
+| **Open/Closed Principle**          | Classes should be open for extension but closed for modification.                            | `ProductBuilder` allows creating different product configurations without changing the `Product` class.  |
+| **Liskov Substitution Principle**  | Subtypes should be substitutable for their base types.                                       | All Page Object classes extend from `BasePage`, allowing interchangeable use in tests.                    |
+| **Interface Segregation Principle**| Clients should not depend on interfaces they do not use.                                     | Utility logic (e.g., logging, screenshots) is extracted into single-responsibility classes.              |
+| **Dependency Inversion Principle** | High-level modules should not depend on low-level modules, but both depend on abstractions. | Tests rely on `PageFactoryManager` and `DriverFactory` rather than creating objects manually.           |
 
-8. **Allure Reporting Integration**
-
-    * Allure annotations added (e.g. `@Step`) in Page Object methods
-    * Tests generate results to `allure-results`
-    * Reports viewed via `allure serve` or `allure generate`
-
-9. **Highlighting Elements with WebDriverEventListener**
-
-    * `HighlightingListener.java` tracks last interacted element
-    * Red border is applied on interaction and during screenshot capture if test fails
-
----
-
-###  Commands
+####  Commands
 
 Run tests with Maven:
 
@@ -83,23 +69,43 @@ allure serve allure-results
 ###  Project Structure
 
 ```
-TAF/
+TAF-patterns/
+│
 ├── src/
 │   ├── main/
-│   │   └── java/core/         # BasePage, DriverFactory
-│   │   └── java/pages/        # Page Objects (HomePage, ProductPage, CartModelPage)
-│   │   └── java/utils/        # HighlightingListener, ScreenshotSaver, TestListener
-        └── java/model/        # Product
+│   │   └── java/
+│   │       ├── core/                                
+│   │       │   ├── BasePage.java              # Common reusable methods for all Page Objects
+│   │       │   ├── DriverFactory.java         # Singleton: creates and provides access to WebDriver
+│   │       │   └── PageFactoryManager.java    # Factory Method: centralizes Page Object creation
+│   │       ├── model/
+│   │       │   ├── Product.java               # Data model representing a product
+│   │       │   └── ProductBuilder.java        # Builder: for flexible creation of Product instances
+│   │       ├── pages/
+│   │       │   ├── CartModalPage.java         # Page Object: modal cart interactions
+│   │       │   ├── HomePage.java              # Page Object: handles search and filtering actions
+│   │       │   └── ProductPage.java           # Page Object: handles product details and actions
+│   │       └── utils/
+│   │           ├── HighlightingListener.java  # Decorator: highlights elements during interaction
+│   │           ├── LoggerMarkers.java         # Defines logging categories (e.g. TEST, DEBUG)
+│   │           ├── ScreenshotSaver.java       # Takes screenshot on test failure
+│   │           └── TestListener.java          # Allure TestNG integration and failure handling
+│
+├── src/
 │   └── test/
-│       └── java/tests/        # Test classes
+│       ├── java/
+│       │   └── tests/
+│       │       ├── BaseTest.java              # Test base: driver setup and teardown
+│       │       ├── AddToCartTest.java         # UI test: search and add product to cart
+│       │       ├── FilterByBrandTest.java     # UI test: filtering products by brand
+│       │       └── ProductSearchTest.java     # UI test: search and open product detail page
+│       └── resources/
+│           ├── config.properties              # Configuration for the test environment
+│           ├── log4j2.xml                     # Logging configuration for Log4j2
+│           ├── regression.xml                 # TestNG suite for regression test group
+│           └── smoke.xml                      # TestNG suite for smoke test group
 │
-├── resources/
-│   └── config.properties      # Browser & environment config
-│   └── smoke.xml              # Smoke test suite
-│   └── regression.xml         # Regression test suite
-│   └── log4j2.xml             # Logging configuration
-│
-├── target/logs/              # Logs output
-├── target/screenshots/       # Screenshots on test failure
-├── allure-results/           # Allure result files
+├── pom.xml                                     # Maven configuration file with dependencies
+├── README.md                                   # Project documentation
+└── logs/                                       # Folder containing test execution logs
 ```
