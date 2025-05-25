@@ -16,7 +16,7 @@ This project demonstrates the practical implementation of design patterns and co
 **Used in:** `PageFactoryManager` class  
 **Purpose:** Creates Page Objects dynamically. Eliminates the need to instantiate pages manually in each test, improves flexibility and reusability.
 
-3. ** Decorator**
+3. **Decorator**
 
 **Used in:** `HighlightingListener` + `EventFiringDecorator`  
 **Purpose:** Enhances standard WebDriver behavior by visually highlighting interacted elements and logging actions. Integrated directly in the driver setup.
