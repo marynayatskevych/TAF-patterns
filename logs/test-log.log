@@ -1,0 +1,257 @@
+2025-05-25 15:14:53 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 15:14:53 INFO  [TEST] TestListener - [ACTION] Test suite started: TAF-patterns
+2025-05-25 15:14:53 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 15:14:53 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 15:14:53 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 15:14:55 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 15:14:58 INFO  [TEST] TestListener - [ACTION] Starting test execution: testVerifyThatItemWithCurrentNameIsExistInList
+2025-05-25 15:15:03 INFO  [ACTION] ProductSearchTest - Starting test: Verify item appears in search results
+2025-05-25 15:15:03 INFO  [ACTION] ProductSearchTest - Searching for item: asus
+2025-05-25 15:15:03 INFO  [TEST] HomePage - Searching for product with text: 'asus'
+2025-05-25 15:15:07 ERROR [ERROR] HomePage - No products found to click!
+2025-05-25 15:15:07 INFO  [ACTION] ProductSearchTest - Clicking first filtered product...
+2025-05-25 15:15:08 INFO  [ACTION] ProductSearchTest - Getting product title from product page...
+2025-05-25 15:15:08 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: h1.title__font
+2025-05-25 15:15:09 INFO  [TEST] ProductSearchTest - Asserting all
+2025-05-25 15:15:09 INFO  [TEST] TestListener - [ACTION] Test passed: testVerifyThatItemWithCurrentNameIsExistInList
+2025-05-25 15:15:09 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 15:15:09 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 15:15:09 INFO  [TEST] TestListener - [ACTION] Test suite finished: TAF-patterns
+2025-05-25 15:21:59 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 15:21:59 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 15:22:00 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 15:22:00 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 15:22:01 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 15:22:10 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 15:22:10 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 15:22:10 INFO  [TEST] HomePage - Searching for product with text: 'notebook'
+2025-05-25 15:22:12 INFO  [ACTION] AddToCartTest - Checking that search results are visible
+2025-05-25 15:22:17 INFO  [ACTION] AddToCartTest - Clicking the first product from filtered list
+2025-05-25 15:22:18 INFO  [ACTION] AddToCartTest - Adding product to cart
+2025-05-25 15:22:18 INFO  [ACTION] ProductPage - Adding product to cart...
+2025-05-25 15:22:18 INFO  [ACTION] AddToCartTest - Opening cart
+2025-05-25 15:22:18 INFO  [ACTION] ProductPage - Opening cart...
+2025-05-25 15:22:19 INFO  [ACTION] AddToCartTest - Checking if modal with cart is visible
+2025-05-25 15:22:19 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: rz-modal-layout.modal-layout
+2025-05-25 15:22:20 INFO  [TEST] CartModalPage - Cart modal is visible
+2025-05-25 15:22:20 INFO  [ACTION] AddToCartTest - Checking if cart has at least one item
+2025-05-25 15:22:20 INFO  [TEST] AddToCartTest - Asserting all verifications
+2025-05-25 15:22:20 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 15:22:20 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 15:24:38 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 15:24:38 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 15:24:38 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 15:24:38 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 15:24:40 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 15:24:47 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 15:24:47 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 15:24:47 INFO  [TEST] HomePage - Searching for product with text: 'notebook'
+2025-05-25 15:24:48 INFO  [ACTION] AddToCartTest - Checking that search results are visible
+2025-05-25 15:24:53 INFO  [ACTION] AddToCartTest - Clicking the first product from filtered list
+2025-05-25 15:24:54 INFO  [ACTION] AddToCartTest - Adding product to cart
+2025-05-25 15:24:54 INFO  [ACTION] ProductPage - Adding product to cart...
+2025-05-25 15:24:55 INFO  [ACTION] AddToCartTest - Opening cart
+2025-05-25 15:24:55 INFO  [ACTION] ProductPage - Opening cart...
+2025-05-25 15:24:55 INFO  [ACTION] AddToCartTest - Checking if modal with cart is visible
+2025-05-25 15:24:55 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: rz-modal-layout.modal-layout
+2025-05-25 15:24:56 INFO  [TEST] CartModalPage - Cart modal is visible
+2025-05-25 15:24:56 INFO  [ACTION] AddToCartTest - Checking if cart has at least one item
+2025-05-25 15:24:56 INFO  [TEST] AddToCartTest - Actual product title in cart: '-14%
+Ноутбук ASUS TUF Gaming F15 FX507ZC4-HN083 (90NR0GW1-M006E0) Mecha Gray / 15.6" IPS Full HD 144 Гц / Intel Core i5-12500H / RAM 16 ГБ / SSD 512 ГБ / GeForce RTX 3050, 4 ГБ
+Продавець: Rozetka
+41 999₴
+35 999₴
+Додаткові послуги
+ОС Windows та окремо встановлення ОС Windows
+Сервіси гарантії
+Сервіс для негарантійних випадків
+Показати ще 4 послуги ↓'
+2025-05-25 15:24:56 INFO  [TEST] AddToCartTest - Expected to contain: 'notebook'
+2025-05-25 15:24:56 INFO  [TEST] AddToCartTest - Asserting all verifications
+2025-05-25 15:24:56 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 15:24:56 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 15:28:18 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 15:28:18 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 15:28:18 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 15:28:18 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 15:28:20 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 15:28:28 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 15:28:28 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 15:28:28 INFO  [TEST] HomePage - Searching for product with text: 'ноутбук'
+2025-05-25 15:28:29 INFO  [ACTION] AddToCartTest - Checking that search results are visible
+2025-05-25 15:28:34 INFO  [ACTION] AddToCartTest - Clicking the first product from filtered list
+2025-05-25 15:28:35 INFO  [ACTION] AddToCartTest - Adding product to cart
+2025-05-25 15:28:35 INFO  [ACTION] ProductPage - Adding product to cart...
+2025-05-25 15:28:35 INFO  [ACTION] AddToCartTest - Opening cart
+2025-05-25 15:28:35 INFO  [ACTION] ProductPage - Opening cart...
+2025-05-25 15:28:36 INFO  [ACTION] AddToCartTest - Checking if modal with cart is visible
+2025-05-25 15:28:36 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: rz-modal-layout.modal-layout
+2025-05-25 15:28:37 INFO  [TEST] CartModalPage - Cart modal is visible
+2025-05-25 15:28:37 INFO  [ACTION] AddToCartTest - Checking if cart has at least one item
+2025-05-25 15:28:37 INFO  [TEST] AddToCartTest - Actual product title in cart: '-14%
+Ноутбук ASUS TUF Gaming F15 FX507ZC4-HN083 (90NR0GW1-M006E0) Mecha Gray / 15.6" IPS Full HD 144 Гц / Intel Core i5-12500H / RAM 16 ГБ / SSD 512 ГБ / GeForce RTX 3050, 4 ГБ
+Продавець: Rozetka
+41 999₴
+35 999₴
+Додаткові послуги
+ОС Windows та окремо встановлення ОС Windows
+Сервіси гарантії
+Сервіс для негарантійних випадків
+Показати ще 4 послуги ↓'
+2025-05-25 15:28:37 INFO  [TEST] AddToCartTest - Expected to contain: 'ноутбук'
+2025-05-25 15:28:37 INFO  [TEST] AddToCartTest - Asserting all verifications
+2025-05-25 15:28:37 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 15:28:37 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 15:40:01 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 15:40:01 INFO  [TEST] TestListener - [ACTION] Test suite started: TAF-patterns
+2025-05-25 15:40:01 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 15:40:01 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 15:40:01 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 15:40:03 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 15:40:06 INFO  [TEST] TestListener - [ACTION] Starting test execution: testFilterByBrandSamsung
+2025-05-25 15:40:11 INFO  [] FilterByBrandTest - Test: Filter by brand 'Samsung' started
+2025-05-25 15:40:11 INFO  [ACTION] FilterByBrandTest - Searching for 'headphones'
+2025-05-25 15:40:11 INFO  [TEST] HomePage - Searching for product with text: 'headphones'
+2025-05-25 15:40:12 INFO  [DEBUG] FilterByBrandTest - Checking if category items are present
+2025-05-25 15:40:19 INFO  [ACTION] FilterByBrandTest - Selecting brand 'Samsung'
+2025-05-25 15:40:19 INFO  [ACTION] HomePage - Selecting brand filter: Samsung
+2025-05-25 15:40:19 INFO  [ACTION] BasePage - Scrolling to element: Decorated {[[ChromeDriver: chrome on mac (2fcb3a894cacf77f358d648b6632c329)] -> xpath: //a[contains(@class,'checkbox-filter-link') and contains(.,'Samsung')]]}
+2025-05-25 15:40:21 INFO  [DEBUG] FilterByBrandTest - Verifying filtered results match brand 'Samsung'
+2025-05-25 15:40:21 INFO  [TEST] FilterByBrandTest - Asserting all
+2025-05-25 15:40:21 INFO  [TEST] TestListener - [ACTION] Test passed: testFilterByBrandSamsung
+2025-05-25 15:40:21 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 15:40:21 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 15:40:21 INFO  [TEST] TestListener - [ACTION] Test suite finished: TAF-patterns
+2025-05-25 16:48:57 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 16:48:57 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 16:48:57 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 16:48:57 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 16:48:59 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 16:49:07 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 16:49:07 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 16:49:07 INFO  [TEST] HomePage - Searching for product with text: 'ноутбук'
+2025-05-25 16:49:07 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 16:49:07 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 16:59:16 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 16:59:16 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 16:59:16 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 16:59:16 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 16:59:18 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 16:59:19 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 16:59:19 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 16:59:19 INFO  [TEST] HomePage - Searching for product with text: 'ноутбук'
+2025-05-25 16:59:22 INFO  [ACTION] AddToCartTest - Checking that search results are visible
+2025-05-25 16:59:27 INFO  [ACTION] AddToCartTest - Clicking the first product from filtered list
+2025-05-25 16:59:29 INFO  [ACTION] AddToCartTest - Adding product to cart
+2025-05-25 16:59:29 INFO  [ACTION] ProductPage - Adding product to cart...
+2025-05-25 16:59:29 INFO  [ACTION] AddToCartTest - Opening cart
+2025-05-25 16:59:29 INFO  [ACTION] ProductPage - Opening cart...
+2025-05-25 16:59:30 INFO  [ACTION] AddToCartTest - Checking if modal with cart is visible
+2025-05-25 16:59:30 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: rz-modal-layout.modal-layout
+2025-05-25 16:59:30 INFO  [TEST] CartModalPage - Cart modal is visible
+2025-05-25 16:59:30 INFO  [ACTION] AddToCartTest - Checking if cart has at least one item
+2025-05-25 16:59:30 INFO  [TEST] AddToCartTest - Actual product title in cart: '-14%
+Ноутбук ASUS TUF Gaming F15 FX507ZC4-HN083 (90NR0GW1-M006E0) Mecha Gray / 15.6" IPS Full HD 144 Гц / Intel Core i5-12500H / RAM 16 ГБ / SSD 512 ГБ / GeForce RTX 3050, 4 ГБ
+Продавець: Rozetka
+41 999₴
+35 999₴
+Додаткові послуги
+ОС Windows та окремо встановлення ОС Windows
+Сервіси гарантії
+Сервіс для негарантійних випадків
+Показати ще 4 послуги ↓'
+2025-05-25 16:59:30 INFO  [TEST] AddToCartTest - Expected to contain: 'ноутбук'
+2025-05-25 16:59:30 INFO  [TEST] AddToCartTest - Asserting all verifications
+2025-05-25 16:59:30 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 16:59:31 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 17:04:05 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 17:04:05 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 17:04:06 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 17:04:06 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 17:04:07 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 17:04:16 INFO  [TEST] AddToCartTest - Test: Add item to cart started
+2025-05-25 17:04:16 INFO  [ACTION] AddToCartTest - Searching for 'notebook'
+2025-05-25 17:04:16 INFO  [TEST] HomePage - Searching for product with text: 'ноутбук'
+2025-05-25 17:04:17 INFO  [ACTION] AddToCartTest - Checking that search results are visible
+2025-05-25 17:04:22 INFO  [ACTION] AddToCartTest - Clicking the first product from filtered list
+2025-05-25 17:04:23 INFO  [ACTION] AddToCartTest - Adding product to cart
+2025-05-25 17:04:23 INFO  [ACTION] ProductPage - Adding product to cart...
+2025-05-25 17:04:23 INFO  [ACTION] AddToCartTest - Opening cart
+2025-05-25 17:04:23 INFO  [ACTION] ProductPage - Opening cart...
+2025-05-25 17:04:24 INFO  [ACTION] AddToCartTest - Checking if modal with cart is visible
+2025-05-25 17:04:24 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: rz-modal-layout.modal-layout
+2025-05-25 17:04:25 INFO  [TEST] CartModalPage - Cart modal is visible
+2025-05-25 17:04:25 INFO  [ACTION] AddToCartTest - Checking if cart has at least one item
+2025-05-25 17:04:25 INFO  [TEST] AddToCartTest - Actual product title in cart: '-14%
+Ноутбук ASUS TUF Gaming F15 FX507ZC4-HN083 (90NR0GW1-M006E0) Mecha Gray / 15.6" IPS Full HD 144 Гц / Intel Core i5-12500H / RAM 16 ГБ / SSD 512 ГБ / GeForce RTX 3050, 4 ГБ
+Продавець: Rozetka
+41 999₴
+35 999₴
+Додаткові послуги
+ОС Windows та окремо встановлення ОС Windows
+Сервіси гарантії
+Сервіс для негарантійних випадків
+Показати ще 4 послуги ↓'
+2025-05-25 17:04:25 INFO  [TEST] AddToCartTest - Expected to contain: 'ноутбук'
+2025-05-25 17:04:25 INFO  [TEST] AddToCartTest - Asserting all verifications
+2025-05-25 17:04:25 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 17:04:25 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 17:05:15 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 17:05:15 INFO  [TEST] TestListener - [ACTION] Test suite started: TAF-patterns
+2025-05-25 17:05:15 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 17:05:16 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 17:05:16 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 17:05:17 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 17:05:20 INFO  [TEST] TestListener - [ACTION] Starting test execution: testFilterByBrandSamsung
+2025-05-25 17:05:25 INFO  [] FilterByBrandTest - Test: Filter by brand 'Samsung' started
+2025-05-25 17:05:25 INFO  [ACTION] FilterByBrandTest - Searching for 'headphones'
+2025-05-25 17:05:25 INFO  [TEST] HomePage - Searching for product with text: 'headphones'
+2025-05-25 17:05:26 INFO  [DEBUG] FilterByBrandTest - Checking if category items are present
+2025-05-25 17:05:33 INFO  [ACTION] FilterByBrandTest - Selecting brand 'Samsung'
+2025-05-25 17:05:33 INFO  [ACTION] HomePage - Selecting brand filter: Samsung
+2025-05-25 17:05:33 INFO  [ACTION] BasePage - Scrolling to element: Decorated {[[ChromeDriver: chrome on mac (f9b45fbb35072e289c787124d37f23ac)] -> xpath: //a[contains(@class,'checkbox-filter-link') and contains(.,'Samsung')]]}
+2025-05-25 17:05:35 INFO  [DEBUG] FilterByBrandTest - Verifying filtered results match brand 'Samsung'
+2025-05-25 17:05:35 INFO  [TEST] FilterByBrandTest - Asserting all
+2025-05-25 17:05:35 INFO  [TEST] TestListener - [ACTION] Test passed: testFilterByBrandSamsung
+2025-05-25 17:05:35 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 17:05:35 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 17:05:35 INFO  [TEST] TestListener - [ACTION] Test suite finished: TAF-patterns
+2025-05-25 17:06:24 INFO  [] Utils - [TestNG] Running:
+  /Users/maryna/Library/Caches/JetBrains/IdeaIC2024.2/temp-testng-customsuite.xml
+
+2025-05-25 17:06:24 INFO  [TEST] TestListener - [ACTION] Test suite started: TAF-patterns
+2025-05-25 17:06:24 INFO  [ACTION] BaseTest - Initializing WebDriver for browser: chrome
+2025-05-25 17:06:25 INFO  [] WebDriverManager - Using chromedriver 136.0.7103.113 (resolved driver for Chrome 136)
+2025-05-25 17:06:25 INFO  [] WebDriverManager - Exporting webdriver.chrome.driver as /Users/maryna/.cache/selenium/chromedriver/mac64/136.0.7103.113/chromedriver
+2025-05-25 17:06:26 INFO  [ACTION] DriverFactory - Browser window maximized
+2025-05-25 17:06:30 INFO  [TEST] TestListener - [ACTION] Starting test execution: testVerifyThatItemWithCurrentNameIsExistInList
+2025-05-25 17:06:35 INFO  [ACTION] ProductSearchTest - Starting test: Verify item appears in search results
+2025-05-25 17:06:35 INFO  [ACTION] ProductSearchTest - Searching for item: asus
+2025-05-25 17:06:35 INFO  [TEST] HomePage - Searching for product with text: 'asus'
+2025-05-25 17:06:39 ERROR [ERROR] HomePage - No products found to click!
+2025-05-25 17:06:39 INFO  [ACTION] ProductSearchTest - Clicking first filtered product...
+2025-05-25 17:06:40 INFO  [ACTION] ProductSearchTest - Getting product title from product page...
+2025-05-25 17:06:40 WARN  [ERROR] HighlightingListener - Element not found for highlighting: By.cssSelector: h1.title__font
+2025-05-25 17:06:41 INFO  [TEST] ProductSearchTest - Asserting all
+2025-05-25 17:06:41 INFO  [TEST] TestListener - [ACTION] Test passed: testVerifyThatItemWithCurrentNameIsExistInList
+2025-05-25 17:06:41 INFO  [ACTION] BaseTest - Closing WebDriver
+2025-05-25 17:06:41 INFO  [ACTION] DriverFactory - Driver closed
+2025-05-25 17:06:41 INFO  [TEST] TestListener - [ACTION] Test suite finished: TAF-patterns

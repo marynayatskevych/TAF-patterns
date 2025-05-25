@@ -1,6 +1,7 @@
 package tests;
 
 import core.DriverFactory;
+import core.PageFactoryManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -15,7 +16,7 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-
+    PageFactoryManager factory;
     private static final Logger log = LoggerFactory.getLogger(BaseTest.class);
 
     @BeforeMethod
@@ -25,6 +26,7 @@ public abstract class BaseTest {
         log.debug(ACTION, "Setting system property for browser: {}", browser);
         log.info(ACTION, "Initializing WebDriver for browser: {}", browser);
         driver = DriverFactory.getDriver();
+        factory = new PageFactoryManager(driver);
         driver.get("https://rozetka.com.ua/");
     }
 

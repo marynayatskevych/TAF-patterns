@@ -1,6 +1,7 @@
 package tests;
 
 import model.Product;
+import model.ProductBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Listeners;
@@ -21,7 +22,7 @@ public class FilterByBrandTest extends BaseTest {
     @Test
     public void testFilterByBrandSamsung() {
         log.info("Test: Filter by brand 'Samsung' started");
-        HomePage homePage = new HomePage();
+        HomePage homePage = factory.get(HomePage.class);
 
         log.info(ACTION,"Searching for 'headphones'");
         homePage.searchFor("headphones");
@@ -34,11 +35,14 @@ public class FilterByBrandTest extends BaseTest {
 
         log.info(DEBUG,"Verifying filtered results match brand 'Samsung'");
         List<Product> products = homePage.getFilteredProductList();
+        Product expected = ProductBuilder.builder()
+                .withBrand("Samsung")
+                .build();
         for (Product product : products) {
             log.debug("Checking product: {}", product);
             softAssert.assertTrue(
-                    product.getName().toLowerCase().contains("samsung"),
-                    "Filtered product does not match brand: " + product
+                    product.getName().toLowerCase().contains(expected.getBrand().toLowerCase()),
+                    "Filtered product does not match expected brand: " + product
             );
         }
         log.info(TEST, "Asserting all");

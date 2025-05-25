@@ -42,4 +42,13 @@ public class CartModalPage extends BasePage {
             return false;
         }
     }
+
+    @Step("Get first cart item title")
+    public String getFirstCartItemTitle() {
+        if (cartItems.isEmpty()) {
+            log.warn(TEST, "No items in cart to get title from");
+            return "";
+        }
+        return cartItems.get(0).getText();
+    }
 }

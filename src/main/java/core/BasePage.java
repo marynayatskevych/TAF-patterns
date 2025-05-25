@@ -17,11 +17,11 @@ public abstract class BasePage {
     private static final Logger log = LoggerFactory.getLogger(BasePage.class);
 
     public BasePage() {
-        this.driver = getDriver();
+        this.driver = DriverFactory.getDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(driver, this);
         log.debug(ACTION, "Page initialized: {}", this.getClass().getSimpleName());
     }
+
 
     protected void click(By locator) {
         WebElement element = driver.findElement(locator);
