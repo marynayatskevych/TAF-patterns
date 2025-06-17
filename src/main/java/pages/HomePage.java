@@ -124,16 +124,13 @@ public class HomePage extends BasePage {
     public void selectBrand(String brandName) {
         log.info(ACTION, "Selecting brand filter: {}", brandName);
 
-        // XPath локатор по части текста
         String xpath = String.format("//a[contains(@class,'checkbox-filter-link') and contains(.,'%s')]", brandName);
         By brandLocator = By.xpath(xpath);
 
-        // Ждём появления, скроллим, кликаем
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(brandLocator));
         scrollTo(element);
         element.click();
 
-        // Ждём изменения URL и загрузки продуктов
         wait.until(ExpectedConditions.urlContains("producer=" + brandName.toLowerCase()));
         waitForProductsReload();
     }
