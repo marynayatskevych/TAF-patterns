@@ -98,7 +98,6 @@ public class HomePage extends BasePage {
         productLinks.get(0).click();
     }
 
-
     @Step("Clicking first product in the result list")
     public void clickFirstFilteredProduct() {
         wait.until(ExpectedConditions.visibilityOfAllElements(productFilterLinks));
@@ -134,7 +133,6 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.urlContains("producer=" + brandName.toLowerCase()));
         waitForProductsReload();
     }
-
 
     @Step("Wait for products to reload")
     private void waitForProductsReload() {
